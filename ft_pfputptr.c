@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:24:41 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/10 12:33:33 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/10 17:08:45 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,8 @@ static void ft_pfpint_to_hex(uintptr_t n, size_t *count)
 void	ft_pfputptr(void *ptr, size_t *count)
 {
 	uintptr_t	pint;
-
+	if (!ptr)
+		return (ft_pfputstr("0x0", count));
 	pint = (uintptr_t)ptr;
-
-	//printf("ptr:   %p\n", ptr);
-	//printf("pint:  %lu\n", pint);
-	
 	ft_pfpint_to_hex(pint, count);
-
-	(*count)++;
 }

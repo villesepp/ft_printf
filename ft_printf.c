@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:23:42 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/10 12:31:15 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/10 14:53:41 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ static void	conversion (va_list args, const char *str, size_t *count)
 	else if (*str == 'd' || *str == 'i')
 		ft_pfputnbr(va_arg(args, int), count);
 	else if (*str == 'u')
-	{
-		ft_pfputchar('-', count);
-		va_arg(args, void *);
-	}
+		ft_pfputunbr(va_arg(args, unsigned int), count);
 	else if (*str == 'x')
 		ft_pfputhex(va_arg(args, int), count, 0);
 	else if (*str == 'X')
@@ -59,5 +56,5 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args); // free allocated memoery
 	//printf("return count %zu\n", count);
-	return (count - 1); // printf returns the number of characters printed (no null term). On error print a negative value.
+	return (count); // printf returns the number of characters printed (no null term). On error print a negative value.
 }

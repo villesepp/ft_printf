@@ -6,11 +6,11 @@
 #    By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 16:13:37 by vseppane          #+#    #+#              #
-#    Updated: 2024/05/10 09:55:48 by vseppane         ###   ########.fr        #
+#    Updated: 2024/05/10 14:54:33 by vseppane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	printf.a
+NAME =	libftprintf.a
 
 CC =	cc
 
@@ -22,7 +22,9 @@ SOURCES =	ft_printf.c \
 			ft_pfputchar.c \
 			ft_pfputhex.c \
 			ft_pfputnbr.c\
+			ft_pfputunbr.c\
 			ft_pfputstring.c \
+			ft_pfputptr.c \
 			main.c
 
 # delete main.c :)
