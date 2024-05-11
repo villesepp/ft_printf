@@ -75,9 +75,13 @@ int main (void)
 	printf("pf   \t %x\n", 2147483647);
  ft_printf("ftpf \t %x\n", 2147483647);
 
-// ft_printf("some funky shit\001\002\007\v\010\f\r\n");
-
-
+	printf("\n");
+	printf("tester stuff \n");
+ 	int printfr = printf("pf slash 001 002 007\001\002\007\v\010\f\r\n");
+	printf("%d \n", printfr);
+ 	int ftprintfr = ft_printf("pf slash 001 002 007\001\002\007\v\010\f\r\n");
+	printf("%d \n", ftprintfr);
+	printf("\n");
 
 
 /*	

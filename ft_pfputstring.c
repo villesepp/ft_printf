@@ -6,24 +6,27 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:24:41 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/10 14:48:39 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:03:28 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_pfputstr(char *str, size_t *count)
+int	ft_pfputstr(char *str, size_t *count)
 {
 	size_t	i;
-	
+	int		error;
+
+	error = 0;
 	if (!str)
 		return(ft_pfputstr("(null)", count));
 	if (*str == '\0')
-		return ;
+		return (error);
 	i = 0;
-	while (str[i])
+	while (str[i] && error != -1)
 	{
-		ft_pfputchar(str[i], count);
+		error = ft_pfputchar(str[i], count);
 		i++;
 	}
+	return (error);
 }

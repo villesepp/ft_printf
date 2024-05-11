@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:24:41 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/10 16:59:31 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:04:00 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 #include <stdio.h> //delte
 
-static void	ft_int_to_hex_string(unsigned int n, size_t *count, int upcase)
+static int	ft_int_to_hex_string(unsigned int n, size_t *count, int upcase)
 {
 	char	buffer[50];
 	int		i;
-	
+	int		error;
+
+	error = 0;
 	i = 0;
 	while (n)
 	{
@@ -29,16 +31,21 @@ static void	ft_int_to_hex_string(unsigned int n, size_t *count, int upcase)
 		n = n/16;
 	}
 	i--;
-	while(i >= 0)
+	while(i >= 0 && error != -1)
 	{
-		ft_pfputchar(buffer[i], count);
+		error = ft_pfputchar(buffer[i], count);
 		i--;
 	}
+	return (error);
 }
 
-void	ft_pfputhex(unsigned int n, size_t *count, int upcase)
+int	ft_pfputhex(unsigned int n, size_t *count, int upcase)
 {
+	int		error;
+
+	error = 0;
 	if (n == 0)
-		ft_pfputchar('0', count);
-	ft_int_to_hex_string(n, count, upcase);
+		return (error = ft_pfputchar('0', count));
+	error = ft_int_to_hex_string(n, count, upcase);
+	return (error);
 }

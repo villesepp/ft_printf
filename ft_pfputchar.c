@@ -6,14 +6,20 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:23:28 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/08 12:23:53 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/11 12:31:18 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_pfputchar(char c, size_t *count)
+int	ft_pfputchar(char c, size_t *count)
 {
-	write(1, &c, 1);
-	(*count)++;
+int	result;
+
+	result = write(1, &c, 1);
+	if (result == 1)
+		(*count)++;
+	if (result < 0)
+		return (-1);
+	return (0);
 }
