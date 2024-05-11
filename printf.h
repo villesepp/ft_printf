@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 10:08:58 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 12:37:34 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:36:50 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdarg.h> // for varg
 # include <stdint.h> // for pointer to int
 
-int		ft_printf(const char *, ...);
+int		ft_printf(const char *str, ...);
 int		ft_pfputchar(char c, size_t *count);
 int		ft_pfputstr(char *string, size_t *count);
 int		ft_pfputnbr(int n, size_t *count);

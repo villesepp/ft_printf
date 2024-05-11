@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:23:28 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 12:31:18 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:29:29 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_pfputchar(char c, size_t *count)
 {
-int	result;
+	int	result;
 
 	result = write(1, &c, 1);
 	if (result == 1)

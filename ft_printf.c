@@ -6,17 +6,15 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:23:42 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:02:57 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:36:53 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h // not using yet
 #include "printf.h"
-#include <stdio.h> // delete
 
-static int	conversion (va_list args, const char *str, size_t *count)
+static int	conversion(va_list args, const char *str, size_t *count)
 {
-	int error;
+	int	error;
 
 	error = 0;
 	if (*str == 'c')
@@ -35,23 +33,23 @@ static int	conversion (va_list args, const char *str, size_t *count)
 		error = ft_pfputhex(va_arg(args, int), count, 1);
 	else if (*str == '%')
 		error = ft_pfputchar('%', count);
-	return(error);
+	return (error);
 }
 
 int	ft_printf(const char *str, ...)
 {
 	size_t	count;
 	int		error;
+	va_list	args;
 
-	va_list	args; // hold the arg information
 	count = 0;
 	error = 0;
 	if (!str)
 		return (0);
-	va_start(args, str); // enables access to variadic function arguments
+	va_start(args, str);
 	while (*str && error != -1)
 	{
-		if(*str == '%')
+		if (*str == '%')
 		{
 			str++;
 			error = conversion(args, str, &count);

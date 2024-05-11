@@ -44,15 +44,6 @@ int main (void)
 	printf("pf   \t %c\t %s\t %p\t %d\t %i\t %u\t %x\t %X\t\n", c, s, p, d, i, u, x, X);
  ft_printf("mypf \t %c\t %s\t %p\t %d\t %i\t %u\t %x\t %X\t\n", c, s, p, d, i, u, x, X);
  	
- /*
- 	printf("\n");
-	printf("= pointers\n");
-	printf("val  \t %d\t\t %d\t\t %d\t\t %d\t\t %d\n", -INT_MIN, -1000, 0, 1000, INT_MAX);
-	printf("===================================================================================================\n");
-	printf("pf   \t %x\t\t %x\t %x\t\t %x\t\t %x\n", -INT_MIN, -1000, 0, 1000, INT_MAX);
- ft_printf("ftpf \t %x\t\t %x\t %x\t\t %x\t\t %x\n", -INT_MIN, -1000, 0, 1000, INT_MAX);
-*/
-
 	printf("\n");
 	printf("= hexadecimal\n");
 	printf("val  \t %d\t\t %d\t\t %d\t\t %d\t\t %d\n", -INT_MIN, -1000, 0, 1000, INT_MAX);
@@ -60,9 +51,24 @@ int main (void)
 	printf("pf   \t %x\t\t %x\t %x\t\t %x\t\t %x\n", -INT_MIN, -1000, 0, 1000, INT_MAX);
  ft_printf("ftpf \t %x\t\t %x\t %x\t\t %x\t\t %x\n", -INT_MIN, -1000, 0, 1000, INT_MAX);
 
-
+	printf("\n");
+	printf("= decimal\n");
+	printf("val  \t %d\t %d\t\t %d\t\t %d\t\t %d\n", -INT_MIN, -1000, 0, 10000, INT_MAX);
+	printf("===================================================================================================\n");
+	printf("pf   \t %d\t %d\t\t %d\t\t %d\t\t %d\n", -INT_MIN, -1000, 0, 10000, INT_MAX);
+ ft_printf("ftpf \t %d\t %d\t\t %d\t\t %d\t\t %d\n", -INT_MIN, -1000, 0, 10000, INT_MAX);
 	printf("\n");
 
+	printf("= decimal\n");
+	 int dr = printf("pf   \t %dX\n", 10000);
+int ftdr = ft_printf("ftpf \t %dX\n", 10000);
+	printf("res   \t %d\n", dr);
+ ft_printf("res   \t %d\n", ftdr);
+
+
+
+
+	printf("= hex\n");
 	printf("pf   \t %x\n", -INT_MIN);
  ft_printf("ftpf \t %x\n", -INT_MIN);
 
@@ -83,15 +89,6 @@ int main (void)
 	printf("%d \n", ftprintfr);
 	printf("\n");
 
-
-/*	
- ft_printf("\n");
-	ft_printf("no args: helloworld\n");
-	ft_printf("char:    %c\n", c);
-	ft_printf("string:  %s\n", s);
-	ft_printf("hex:     %x\n", x);
-	ft_printf("HEX:     %X\n", X);
-	*/
 	ft_printf("\n");
 	return (0);
 }

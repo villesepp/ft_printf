@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:24:41 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:03:28 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:31:44 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_pfputstr(char *str, size_t *count)
 
 	error = 0;
 	if (!str)
-		return(ft_pfputstr("(null)", count));
+		return (ft_pfputstr("(null)", count));
 	if (*str == '\0')
 		return (error);
 	i = 0;

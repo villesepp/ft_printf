@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:24:41 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:04:00 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/11 13:29:09 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ static int	ft_int_to_hex_string(unsigned int n, size_t *count, int upcase)
 		if (upcase && (buffer[i] >= 'a' && buffer[i] <= 'f'))
 			buffer[i] -= 32;
 		i++;
-		n = n/16;
+		n = n / 16;
 	}
 	i--;
-	while(i >= 0 && error != -1)
+	while (i >= 0 && error != -1)
 	{
 		error = ft_pfputchar(buffer[i], count);
 		i--;
