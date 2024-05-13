@@ -6,17 +6,15 @@
 #    By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 16:13:37 by vseppane          #+#    #+#              #
-#    Updated: 2024/05/11 14:28:33 by vseppane         ###   ########.fr        #
+#    Updated: 2024/05/13 11:07:44 by vseppane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	libftprintf.a
+NAME =	ft_printf.a
 
 CC =	cc
 
-# enable errors when done
-#CFLAGS =	-Wall -Wextra -Werror
-CFLAGS =	
+CFLAGS =	-Wall -Wextra -Werror
 
 SOURCES =	ft_printf.c \
 			ft_pfputchar.c \
@@ -25,11 +23,7 @@ SOURCES =	ft_printf.c \
 			ft_pfputunbr.c\
 			ft_pfputstr.c \
 			ft_pfputptr.c \
-			ft_pfitoa.c \
-			main.c
-
-# delete main.c :)
-
+			ft_pfitoa.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -41,20 +35,12 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(AR) -rc $@ $?
 
-all:
-	$(CC) -o a.out *.c
-	./a.out
-# delete this :)
-
 clean:		
 	rm -f $(OBJECTS)
 
 fclean:		clean
 			rm -f $(NAME)
-			rm -f ./a.out
-# delete a.out :)
 
 re:			fclean all
 
-.PHONY: 	all clean fclean re b
-# delete out :)
+.PHONY: 	all clean fclean re
