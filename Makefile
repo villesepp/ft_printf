@@ -6,15 +6,18 @@
 #    By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 16:13:37 by vseppane          #+#    #+#              #
-#    Updated: 2024/05/13 11:07:44 by vseppane         ###   ########.fr        #
+#    Updated: 2024/05/13 13:10:49 by vseppane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	ft_printf.a
+###   v a r i a b l e s   ###
 
+NAME =	libftprintf.a
+LIBFT =	libft
 CC =	cc
-
 CFLAGS =	-Wall -Wextra -Werror
+
+###   s o u r c e s   ###
 
 SOURCES =	ft_printf.c \
 			ft_pfputchar.c \
@@ -27,19 +30,26 @@ SOURCES =	ft_printf.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
+###   t a r g e t s   ###
+
 %.o: %.c
 	$(CC) -c $(CFLAGS) $?
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
+	make -C $(LIBFT)
+	cp libft/libft.a .
+	mv libft.a $(NAME)
 	$(AR) -rc $@ $?
 
 clean:		
 	rm -f $(OBJECTS)
+	make clean -C $(LIBFT)
 
 fclean:		clean
-			rm -f $(NAME)
+	rm -f $(NAME)
+	rm -f $(LIBFT)/libft.a
 
 re:			fclean all
 
