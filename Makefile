@@ -6,7 +6,7 @@
 #    By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 16:13:37 by vseppane          #+#    #+#              #
-#    Updated: 2024/05/10 14:54:33 by vseppane         ###   ########.fr        #
+#    Updated: 2024/05/11 14:28:33 by vseppane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,9 @@ SOURCES =	ft_printf.c \
 			ft_pfputhex.c \
 			ft_pfputnbr.c\
 			ft_pfputunbr.c\
-			ft_pfputstring.c \
+			ft_pfputstr.c \
 			ft_pfputptr.c \
+			ft_pfitoa.c \
 			main.c
 
 # delete main.c :)

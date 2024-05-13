@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:40:09 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:28:42 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:22:31 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,19 @@
 int	ft_pfputnbr(int n, size_t *count)
 {
 	int		error;
+	char	*str;
+	int		i;
 
+	str = ft_pfitoa(n, 0);
+	if (!str)
+		return (-1);
 	error = 0;
-	if (n == -2147483648 && error != -1)
+	i = 0;
+	while (str[i] != '\0' && error != -1)
 	{
-		error = ft_pfputstr("-2147483648", count);
-		return (error);
+		error = ft_pfputchar(str[i], count);
+		i++;
 	}
-	if (n < 0 && error != -1)
-	{
-		n *= -1;
-		error = ft_pfputchar('-', count);
-	}
-	if (n >= 10 && error != -1)
-	{
-		ft_pfputnbr(n / 10, count);
-		error = ft_pfputchar(n % 10 + '0', count);
-	}
-	if (n < 10 && error != -1)
-		error = ft_pfputchar(n + '0', count);
+	free(str);
 	return (error);
 }
