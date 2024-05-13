@@ -6,7 +6,7 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:40:09 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/13 10:31:17 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:56:26 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_pfputunbr(unsigned int n, size_t *count)
 {
 	int		error;
-	char    *str;
+	char	*str;
 	int		i;
 
 	str = ft_pfitoa(n, 1);
