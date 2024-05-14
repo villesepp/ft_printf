@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_pfitoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 13:37:40 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/13 10:31:12 by vseppane         ###   ########.fr       */
+/*   Created: 2024/05/13 13:25:57 by vseppane          #+#    #+#             */
+/*   Updated: 2024/05/13 13:26:00 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static void	insert_chars(char *res, long long int n, int sign, size_t count)
 {

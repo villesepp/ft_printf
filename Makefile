@@ -6,7 +6,7 @@
 #    By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 16:13:37 by vseppane          #+#    #+#              #
-#    Updated: 2024/05/13 13:10:49 by vseppane         ###   ########.fr        #
+#    Updated: 2024/05/14 09:44:19 by vseppane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,17 +39,25 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	make -C $(LIBFT)
-	cp libft/libft.a .
+	@echo
+	cp $(LIBFT)/$(LIBFT).a .
+	@echo
 	mv libft.a $(NAME)
+	@echo
 	$(AR) -rc $@ $?
+	@echo
 
 clean:		
 	rm -f $(OBJECTS)
+	@echo
 	make clean -C $(LIBFT)
+	@echo
 
 fclean:		clean
 	rm -f $(NAME)
-	rm -f $(LIBFT)/libft.a
+	@echo
+	rm -f $(LIBFT)/$(LIBFT).a
+	@echo
 
 re:			fclean all
 

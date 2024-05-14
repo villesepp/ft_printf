@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pfputstring.c                                   :+:      :+:    :+:   */
+/*   ft_pfputptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:24:41 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:38:27 by vseppane         ###   ########.fr       */
+/*   Created: 2024/05/13 13:26:45 by vseppane          #+#    #+#             */
+/*   Updated: 2024/05/14 12:21:01 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	ft_pfpint_to_hex(uintptr_t n, size_t *count)
 {
@@ -43,7 +43,11 @@ int	ft_pfputptr(void *ptr, size_t *count)
 
 	error = 0;
 	if (!ptr)
-		return (error = ft_pfputstr("0x0", count));
+	{
+		error = ft_pfputstr("0x0", count);
+		return (error);
+	}
 	pint = (uintptr_t)ptr;
-	return (error = ft_pfpint_to_hex(pint, count));
+	error = ft_pfpint_to_hex(pint, count);
+	return (error);
 }

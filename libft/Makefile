@@ -6,7 +6,7 @@
 #    By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/21 16:13:37 by vseppane          #+#    #+#              #
-#    Updated: 2024/05/07 12:24:24 by vseppane         ###   ########.fr        #
+#    Updated: 2024/05/14 09:43:25 by vseppane         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,8 @@ SOURCES =		ft_isalpha.c \
 		ft_itoa.c \
 		ft_strtrim.c \
 		ft_split.c \
-		ft_strlcat.c
-
-BONUSSOURCES =		ft_lstnew_bonus.c \
+		ft_strlcat.c \
+		ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
 		ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c \
@@ -64,8 +63,6 @@ BONUSSOURCES =		ft_lstnew_bonus.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 
-BONUSOBJECTS = $(BONUSSOURCES:.c=.o)
-
 %.o: %.c
 	$(CC) -c $(CFLAGS) $?
 
@@ -74,14 +71,8 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(AR) -rc $@ $?
 
-bonus: .bonus
-
-.bonus: $(OBJECTS) $(BONUSOBJECTS)
-	$(AR) -rc $(NAME) $?
-	@touch .bonus
-
 clean:		
-	rm -f $(OBJECTS) $(BONUSOBJECTS)
+	rm -f $(OBJECTS)
 
 fclean:		clean
 			rm -f $(NAME)
@@ -89,4 +80,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: 	all bonus clean fclean re
+.PHONY: 	all clean fclean re

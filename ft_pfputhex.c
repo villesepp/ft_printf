@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pfputstring.c                                   :+:      :+:    :+:   */
+/*   ft_pfputhex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:24:41 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:29:09 by vseppane         ###   ########.fr       */
+/*   Created: 2024/05/13 13:26:26 by vseppane          #+#    #+#             */
+/*   Updated: 2024/05/14 12:18:02 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
-
-#include <stdio.h> //delte
+#include "ft_printf.h"
 
 static int	ft_int_to_hex_string(unsigned int n, size_t *count, int upcase)
 {
@@ -45,7 +43,10 @@ int	ft_pfputhex(unsigned int n, size_t *count, int upcase)
 
 	error = 0;
 	if (n == 0)
-		return (error = ft_pfputchar('0', count));
+	{
+		error = ft_pfputchar('0', count);
+		return (error);
+	}
 	error = ft_int_to_hex_string(n, count, upcase);
 	return (error);
 }

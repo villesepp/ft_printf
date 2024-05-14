@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pfputstring.c                                   :+:      :+:    :+:   */
+/*   ft_pfputstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:24:41 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:31:44 by vseppane         ###   ########.fr       */
+/*   Created: 2024/05/13 13:25:10 by vseppane          #+#    #+#             */
+/*   Updated: 2024/05/14 12:21:17 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_pfputstr(char *str, size_t *count)
 {

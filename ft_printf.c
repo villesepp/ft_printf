@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:23:42 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:36:53 by vseppane         ###   ########.fr       */
+/*   Created: 2024/05/13 13:28:01 by vseppane          #+#    #+#             */
+/*   Updated: 2024/05/13 13:28:04 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	conversion(va_list args, const char *str, size_t *count)
 {

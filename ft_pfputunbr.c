@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pfputnbr.c                                      :+:      :+:    :+:   */
+/*   ft_pfputunbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 12:40:09 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/13 12:56:26 by vseppane         ###   ########.fr       */
+/*   Created: 2024/05/13 13:25:36 by vseppane          #+#    #+#             */
+/*   Updated: 2024/05/13 13:25:43 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_pfputunbr(unsigned int n, size_t *count)
 {

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/07 10:08:58 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/13 10:31:29 by vseppane         ###   ########.fr       */
+/*   Created: 2024/05/13 13:27:48 by vseppane          #+#    #+#             */
+/*   Updated: 2024/05/14 11:36:25 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-# define PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdint.h>
 # include <stdlib.h>
+# include "libft/libft.h"
 
 int		ft_printf(const char *str, ...);
 int		ft_pfputchar(char c, size_t *count);

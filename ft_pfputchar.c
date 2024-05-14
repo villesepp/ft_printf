@@ -6,11 +6,11 @@
 /*   By: vseppane <vseppane@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:23:28 by vseppane          #+#    #+#             */
-/*   Updated: 2024/05/11 13:29:29 by vseppane         ###   ########.fr       */
+/*   Updated: 2024/05/13 13:26:16 by vseppane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_pfputchar(char c, size_t *count)
 {
